@@ -3,21 +3,42 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --bg-primary: #0B0E11;
+  --bg-card: #1E2329;
+  --border: #2B3139;
+  --text-primary: #EAECEF;
+  --text-secondary: #848E9C;
+  --yellow: #F0B90B;
+  --green: #0ECB81;
+  --red: #F6465D;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+* {
+  box-sizing: border-box;
 }
 
+html,
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: #0B0E11;
+  color: #EAECEF;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #1E2329;
+}
+::-webkit-scrollbar-thumb {
+  background: #2B3139;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #848E9C;
 }
 
 @layer utilities {
