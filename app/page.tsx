@@ -218,7 +218,7 @@ export default function Dashboard() {
 
   const { portfolio, decisions, market, trades } = data;
 
-  const topHoldings = (portfolio?.holdings ?? [])
+  const topHoldings = (portfolio?.top_holdings ?? [])
     .slice()
     .sort((a, b) => b.value - a.value)
     .slice(0, 8);
@@ -310,11 +310,11 @@ export default function Dashboard() {
                 <p
                   className="text-2xl font-bold"
                   style={{
-                    color: (portfolio?.pnl ?? 0) >= 0 ? "#0ECB81" : "#F6465D",
+                    color: (portfolio?.pnl_dollar ?? 0) >= 0 ? "#0ECB81" : "#F6465D",
                   }}
                 >
-                  {(portfolio?.pnl ?? 0) >= 0 ? "+" : "-"}$
-                  {fmt(Math.abs(portfolio?.pnl ?? 0))}
+                  {(portfolio?.pnl_dollar ?? 0) >= 0 ? "+" : "-"}$
+                  {fmt(Math.abs(portfolio?.pnl_dollar ?? 0))}
                 </p>
                 <p
                   className="text-sm mt-0.5"
@@ -486,7 +486,7 @@ export default function Dashboard() {
                       {h.symbol}
                     </span>
                     <span className="text-right" style={{ color: "#EAECEF" }}>
-                      ${h.value.toLocaleString("en-US", { maximumFractionDigits: 0 })}
+                      ${h.value_usd.toLocaleString("en-US", { maximumFractionDigits: 0 })}
                     </span>
                     <span className="text-right" style={{ color: "#848E9C" }}>
                       {h.percentage.toFixed(1)}%
@@ -776,3 +776,4 @@ export default function Dashboard() {
     </div>
   );
 }
+
