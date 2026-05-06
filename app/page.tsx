@@ -12,7 +12,7 @@ import {
 } from "recharts";
 
 const API_URL =
-  process.env.NEXT_PUBLIC_API_URL || "http://16.171.145.190:8080";
+  "/api/bot";
 
 interface Holding {
   symbol: string;
